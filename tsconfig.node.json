@@ -1,0 +1,21 @@
+/**
+ * vite初始化的时候为什么要生成这个文件？
+ * 1.应用程序(src文件夹)的目标是(将运行)在浏览器内。
+ * 2.Vite本身--包括它的配置--运行在Node内的计算机上，这是完全不同的环境(与浏览器相比)，有不同的API和约束
+ * 所以此文件专门用来配置 vite.config.ts 文件的编译规则
+ * @date 2023-07-03 16:06:06
+ */
+{
+  "compilerOptions": {
+    "composite": true,
+    "skipLibCheck": true,
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "allowSyntheticDefaultImports": true,
+    "strict": true
+  },
+  "include": [
+    "vite.config.ts",
+    "vite/**/*.ts"
+  ]
+}

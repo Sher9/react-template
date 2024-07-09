@@ -1,0 +1,69 @@
+{
+  "compilerOptions": {
+    // 指定编译目标的ECMAScript版本
+    "target": "ES2020",
+    //使用的模块系统类型。ESNext 支持更多特性，比如动态导入等。
+    "module": "ESNext",
+    // 指定jsx代码用于的开发环境
+    "jsx": "react-jsx",
+    // 指定要包含在编译中的库文件,如未指定会根据target注入默认列表
+    "lib": [
+      "ES2020",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    //将 class 声明中的字段语义从 [[Set]] 变更到 [[Define]](1.字段声明的方式从 = 赋值的方式变更成了 Object.defineProperty;2.所有的字段声明都会生效，即使它没有指定默认值)
+    "useDefineForClassFields": true,
+    // 用于设置解析非相对模块名称的基本目录，相对模块不会受到baseUrl的影响
+    "baseUrl": ".",
+    /* Bundler mode */
+    //用于选择模块解析策略
+    "moduleResolution": "bundler",
+    // 用于设置模块名到基于baseUrl的路径映射
+    /* alias */
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+      "#/*": [
+        "types/*"
+      ]
+    },
+    //是否允许包含导入的模块.json的扩展。
+    "resolveJsonModule": true,
+    //是否允许在 import 语句中导入 .ts 文件扩展名
+    "allowImportingTsExtensions": true,
+    // 是否移除注释。可以提高编译速度并减小生成文件的大小
+    "removeComments": true,
+    /* Linting */
+    // 严格模式
+    "strict": true,
+    // 用于检查是否有定义了但是没有使用变量
+    "noUnusedLocals": true,
+    // 用于检测是否在函数中没有使用的参数
+    "noUnusedParameters": true,
+    //用于控制是否在编译时检查 switch 语句中的 fallthrough 行为（即当 case 分支没有正确结束时，控制流是否意外地流向下一个 case）。当设置为 true 时，编译器会报错，指出存在没有 break 语句或其他终止语句的情况，从而避免意外的行为
+    "noFallthroughCasesInSwitch": true,
+    //用于控制 TypeScript 编译器是否生成输出文件。如果 noEmit 设置为 true，则即使编译器无法发出错误或警告，编译器也不会生成输出文件。
+    "noEmit": true,
+    //TypeScript 编译器会将每个文件作为独立的模块来进行类型检查，这意味着一个文件中的类型错误不会影响其他文件，并且该文件不能引用其他文件中声明的实体。
+    "isolatedModules": true,
+    // 用来控制是否在编译时进行库文件检查的,设为true跳过检查，以加快构建速度
+    "skipLibCheck": true,
+  },
+  //指定编译器应该包含哪些文件进行编译(** 匹配零个或多个目录及其子目录)
+  "include": [
+    "src",
+    "types/**.d.ts",
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ],
+  //指定要引用的项目
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ]
+}

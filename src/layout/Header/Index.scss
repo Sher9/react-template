@@ -1,0 +1,115 @@
+.header-div {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    padding: 0 15px;
+
+    .right-container {
+        display: flex;
+        align-items: center;
+
+        @keyframes mydeamon {
+            0% {
+                transform: scale(2); //scale代表闪烁的体型变化，其他倾斜等样式自行搜索
+                opacity: 1; //透明程度
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 0;
+            }
+        }
+
+        .flashing-icon {
+            color: red;
+            position: relative;
+            animation: mydeamon 2s infinite; //1s值一秒内完成动画
+            -webkit-animation: mydeamon 2s infinite;
+            margin: 0 15px;
+        }
+
+        .icon {
+            margin: 0 15px;
+        }
+
+        .notice-div {
+            margin: 0 15px;
+            padding-top: 12px;
+        }
+    }
+
+
+}
+
+.mode-container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .card-container {
+        width: 45%;
+        text-align: center;
+    }
+}
+
+.fullscreen-button {
+    display: flex;
+    align-items: center;
+}
+
+
+
+.content {
+    width: 96%;
+    padding: 15px;
+    overflow-x: auto;
+
+    .content-item {
+        display: flex;
+        border-bottom: 1px dashed rgba(217, 217, 217, 0.6);
+        padding-bottom: 10px;
+        display: flex;
+        margin-bottom: 15px;
+
+        .content-text {
+            margin-left: 15px;
+
+            .title {
+                font-weight: 500;
+                margin-right: 10px;
+            }
+
+            .text {
+                font-size: 12px;
+                font-weight: 300;
+                opacity: 0.6;
+            }
+
+            .message {
+                background: rgba(0, 0, 0, 0.04);
+                margin: 15px 0;
+                padding: 15px;
+            }
+
+            .button {
+                margin-top: 15px;
+            }
+
+            .file {
+                display: flex;
+                padding: 15px;
+
+                .file-content {
+                    display: flex;
+                    flex-direction: column;
+                    margin: 8px;
+                }
+            }
+
+        }
+    }
+}
